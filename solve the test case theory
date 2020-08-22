@@ -1,0 +1,175 @@
+import os
+import pyttsx3
+
+print("**********************************WELCOME**********************************")
+items = ['chrome', 'youtube', 'vlc', 'cmd(comman prompt)','actioncenter', 'calculater', 'calender', 'chrome', 'media player', 'song', 'powershell', 'cmd(command prompt)', 'jupyter notebook fjfht',
+         'notepad', 'word', 'paint', 'powerpoint', 'excel', 'clock', 'wifi network','camera', 'voice recorder','cortana','facebook','email','map','microsoft edge','appstore ',
+         '3d paint/drawing','gallery','twitter','screen shot','youtube','settings', 'display settings', 'nightlight settings', 'sound setting', 'notifications setting', 'game setting ',
+         'batterysaver setting', 'storage setting', 'tabletmode setting', 'multitasking setting', 'bluetooth setting', 'printer setting', 'mouse setting', 'usb setting', 'phone setting',
+         'wifi setting', 'network setting', 'moblile hotspot setting', 'airplanemode setting', 'background setting', 'lockscreen setting', 'taskbarsetting', 'map setting', 'your info setting',
+         'email account setting', ' date and time setting', 'update setting'
+          ]
+print('if you want to see the list of items please press 1 any time we will provide you the list ')
+pyttsx3.speak('if you want to see the list of items please press 1 any time we will provide you the list ')
+
+while True:  # for asking again and again
+    q = input("how can i help you?? ").lower()  # taking user input
+
+    if 'not ' in q or 'donot' in q or "don't" in q or 'dont' in q:
+
+        if 'quit' in q or 'stop' in q or 'exit' in q or 'end' in q:
+            break
+        else:
+            print('ohk i will not open this for you')
+            pyttsx3.speak('ohk i will not open this for you')
+
+    elif 'quit' in q or 'stop' in q or 'exit' in q or 'end' in q or 'close' in q:
+        break
+
+    else:
+        if '1' == q:
+            print(items)
+            pyttsx3.speak('so these are the list of items that i can open or run or launch for you')
+
+        elif 'quit' in q or 'stop' in q or 'exit' in q or 'end' in q or 'close' in q:
+            break
+        elif 'setting' in q or 'settings' in q:
+            pyttsx3.speak(' i am opening for you please wait')
+            if 'display' in q:  # open display settings
+                if 'advance' in q:
+                    os.system('start ms-settings:display-advanced')
+                else:
+                    os.system('start ms-settings:display')
+
+            elif ('nightlight' in q) or (('night' in q) and ('light' in q)):
+                os.system('start ms-settings:nightlight')
+            elif 'sound' in q:
+                os.system('start ms-settings:sound')
+            elif 'notifications' in q or 'notification' in q:
+                os.system('start ms-settings:notifications')
+            elif 'game' in q:
+                os.system('start ms-settings:quietmomentsgame')
+            elif 'batterysaver' in q or ('battery' in q and 'saver' in q):
+                os.system('start ms-settings:batterysaver')
+            elif 'storage' in q:
+                os.system('start ms-settings:storagesense')
+            elif 'tabletmode' in q:
+                os.system('start ms-settings:tabletmode')
+            elif 'multitasking' in q:
+                os.system('start ms-settings:multitasking')
+            elif 'bluetooth' in q:
+                os.system('start ms-settings:bluetooth')
+            elif 'printer' in q:
+                os.system('start ms-settings:printers')
+            elif 'mouse' in q:
+                os.system('start ms-settings:mousetouchpad')
+            elif 'usb' in q:
+                os.system('start ms-settings:usb')
+            elif 'phone' in q:
+                os.system('start ms-settings:mobile-devices')
+            elif 'wifi' in q:
+                os.system('start ms-availablenetworks:')
+            elif 'network' in q:
+                os.system('start ms-settings:network')
+            elif 'moblile hotspot' in q:
+                os.system('start ms-settings:network-mobilehotspot')
+            elif 'airplanemode' in q or (('airplane' in q) and ('mode' in q)):
+                os.system('start ms-settings:proximity')
+            elif 'background' in q:
+                os.system('start ms-settings:personalization')  # for background
+            elif 'lockscreen' in q:
+                os.system('start ms-settings:lockscreen')
+            elif 'taskbar' in q:
+                os.system('start ms-settings:taskbar')
+            elif 'map' in q:
+                os.system('start ms-settings:maps')
+            elif ('my' in q or 'mine' in q) and ('info' in q or 'information' in q):
+                os.system('start ms-settings:yourinfo')  # my info
+            elif 'email' in q or 'account' in q:
+                os.system('start ms-settings:emailandaccounts ')
+            elif 'date' in q or 'time' in q:
+                os.system('start ms-settings:dateandtime')
+            elif 'update' in q:
+                os.system('start ms-settings:windowsupdate')  # update setting
+            else:
+                os.system('start ms-settings:')  # open the setting
+
+
+        elif 'actioncenter' in q or (
+                'action' in q and 'center' in q) or 'tab' in q or 'notification' in q or 'bar' in q or 'navigation bar' in q:
+            os.system('start ms-actioncenter:')
+        elif ('my' in q or 'mine' in q) and ('info' in q or 'information' in q):
+            os.system('start ms-settings:yourinfo')  # my info
+        elif 'claculater' in q or 'calc' in q:
+            os.system('start calc')
+        elif 'calender' in q:
+            os.system('start outlookcal:')  # for calender
+        elif 'chrome' in q:
+            os.system('start chrome')
+        elif 'song' in q or 'mediaplayer' in q or ('media' in q and 'player' in q) or ('play' in q and 'song' in q):
+
+            a = input('which midea player you want to use'
+                      '\n i can open vlc player , spotify , windows midea player , youtube')
+            if 'vlc' in a :
+                os.system('start vlc')
+            elif 'spotify' in a:
+                os.system('start spotify')
+            elif 'youtube' in a:
+                os.system('start chrome ? https://www.youtube.com/results?search_query=')
+            else:
+                os.system('start wmplayer')
+
+        elif 'powershell' in q:
+            os.system('start powershell')
+        elif 'cmd' in q or 'command prompt' in q:
+            os.system('start')
+        elif 'jupyter notebook' in q:
+            os.system('start jupyter notebook')
+        elif 'notepad' in q or ('text' in q and 'editer' in q) or 'editer' in q:
+            os.system('start notepad')
+        elif 'word' in q:
+            os.system('start winword')
+        elif 'paint' in q:
+            os.system('mspaint')
+        elif 'powerpoint' in q or 'ppt' in q :
+            os.system('start powerpnt')
+        elif 'excel' in q:
+            os.system('start excel.exe')
+        elif 'wifi' in q or 'network' in q:
+            os.system('start ms-settings:network-wifi')
+        elif 'clock' in q:
+            os.system('start ms-clock:')
+        elif 'camera' in q:
+            os.system('start microsoft.windows.camera:')  # open camera
+        elif 'voice' in q and ('recorder' in q or 'recording' in q):
+            os.system('start ms-callrecording')
+        elif 'voice' in q or 'chat' in q or 'cortana' in q:
+            os.system('start ms-cortana:')
+        elif 'fb' in q or 'facebook' in q:
+            os.system('start fb:')  # open facebook
+        elif 'email' in q or 'mail' in q:
+            os.system('start outlookmail:')  # open mail
+        elif 'map' in q or 'world map' in q:
+            os.system('start bingmaps:')  # open map
+        elif 'microsoft' in q and 'edge' in q:
+            os.system('start microsoft-edge:')  # open microsoft edge
+        elif 'store' in q or 'playstore' in q or 'appstore' in q:
+            os.system('start ms-windows-store:')  # open store
+        elif '3d' in q and ('paint' in q or 'drawaing' in q):
+            os.system('start ms-paint')
+        elif 'photos' in q or 'photo' in q or 'gallery' in q:
+            os.system('start ms-photos:')  # open gallery or photos
+        elif 'twitter' in q:
+            os.system('start twitter:')  # open twitter
+        elif ('screen' in q and 'shot' in q) or 'screenshot' in q:
+            os.system('start ms-screenclip:')  # open windows tip
+        elif 'youtube' in q:
+            os.system('start chrome ? https://www.youtube.com/results?search_query=')
+        else:
+            print('oops sorry someting wrong please correct it or i cannot run this command please try another command')
+            pyttsx3.speak('oops sorry someting wrong please correct it or i cant run this command please try another command')
+
+
+pyttsx3.speak('thank you for using me ')
+pyttsx3.speak('keep coding stay safe')
+pyttsx3.speak('powering off')
